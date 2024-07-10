@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xx-Jl-Mdg">
-                                <rect key="frame" x="107.5" y="418" width="199" height="60"/>
+                                <rect key="frame" x="20" y="726" width="170" height="60"/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.68627450980000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Kxb-sl-v49"/>
-                                    <constraint firstAttribute="width" constant="199" id="wsd-ac-LWr"/>
+                                    <constraint firstAttribute="height" constant="60" id="7ms-d4-Lsd"/>
+                                    <constraint firstAttribute="width" constant="170" id="Mge-24-pML"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <state key="normal" title="Share the invite">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -37,15 +37,53 @@
                                     <action selector="shareInviteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUW-Q9-LK8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDY-bn-qyr">
+                                <rect key="frame" x="242.5" y="725" width="151.5" height="60"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.68627450980000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                <state key="normal" title="Generate QR Code">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="button.layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="qrCodeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NXO-Cb-49H"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J57-GZ-HdU">
+                                <rect key="frame" x="70" y="468" width="274" height="232"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJ9-pE-4Uc" customClass="QRCodeView" customModule="ShareInvitePOC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Xx-Jl-Mdg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XHf-Wt-IDS"/>
-                            <constraint firstItem="4Xx-Jl-Mdg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gZW-h9-wgC"/>
+                            <constraint firstItem="J57-GZ-HdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="070-2x-VWj"/>
+                            <constraint firstItem="cJ9-pE-4Uc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3iE-Dg-L3j"/>
+                            <constraint firstItem="J57-GZ-HdU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="420" id="DXs-0c-n1x"/>
+                            <constraint firstAttribute="bottom" secondItem="cJ9-pE-4Uc" secondAttribute="bottom" id="DmE-5X-hB4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Xx-Jl-Mdg" secondAttribute="bottom" constant="76" id="G8N-zd-yhJ"/>
+                            <constraint firstItem="cJ9-pE-4Uc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H01-fE-Idy"/>
+                            <constraint firstItem="zDY-bn-qyr" firstAttribute="top" secondItem="J57-GZ-HdU" secondAttribute="bottom" constant="25" id="NCQ-tu-Dn6"/>
+                            <constraint firstItem="4Xx-Jl-Mdg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NFl-qG-L54"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zDY-bn-qyr" secondAttribute="bottom" constant="77" id="PVQ-EC-tHX"/>
+                            <constraint firstItem="4Xx-Jl-Mdg" firstAttribute="height" secondItem="zDY-bn-qyr" secondAttribute="height" id="UfW-BS-ieu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J57-GZ-HdU" secondAttribute="trailing" constant="70" id="eSV-hL-YGU"/>
+                            <constraint firstItem="cJ9-pE-4Uc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="g8J-cW-mhy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zDY-bn-qyr" secondAttribute="trailing" constant="20" id="kDL-WM-LSa"/>
+                            <constraint firstItem="4Xx-Jl-Mdg" firstAttribute="width" secondItem="zDY-bn-qyr" secondAttribute="width" multiplier="1.12179" id="nBf-de-aXd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="qrCodeButton" destination="zDY-bn-qyr" id="JNl-w1-30M"/>
+                        <outlet property="qrCodeImageView" destination="J57-GZ-HdU" id="ohj-tj-FM0"/>
+                        <outlet property="qrCodeView" destination="cJ9-pE-4Uc" id="2eA-jW-P40"/>
                         <outlet property="shareInviteButton" destination="4Xx-Jl-Mdg" id="dOt-x1-PgG"/>
                     </connections>
                 </viewController>
